@@ -13,8 +13,12 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
  */
 class ShopifyPostRestRequest extends ShopifyRestRequest implements RequestBody, RequestHeaders
 {
+    /** @var array<string, array|int|string> */
     protected array $rawData = [];
 
+    /**
+     * @param array<string, array|int|string> $rawData
+     */
     public function setRawData(array $rawData): self
     {
         $this->rawData = $rawData;

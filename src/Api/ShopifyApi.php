@@ -48,6 +48,9 @@ abstract class ShopifyApi extends AbstractApi
         );
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function getLinkHeaderUrl(string $name): array
     {
         $headers = $this->response->getHeaders();
@@ -64,6 +67,11 @@ abstract class ShopifyApi extends AbstractApi
         }
 
         $query_params = parse_url($matches[1], \PHP_URL_QUERY);
+
+        if (!\is_string($query_params)) {
+            return [];
+        }
+
         parse_str($query_params, $data);
 
         if (!isset($data['page_info'])) {
@@ -76,7 +84,10 @@ abstract class ShopifyApi extends AbstractApi
         return $pageInfo;
     }
 
-    private function handlePageInfo(array &$data)
+    /**
+     * @param array<string, string> $data
+     */
+    private function handlePageInfo(array &$data): void
     {
         $data['next_page_info']     = $this->getLinkHeaderUrl('next');
         $data['previous_page_info'] = $this->getLinkHeaderUrl('previous');

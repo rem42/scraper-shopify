@@ -49,7 +49,7 @@ class ShopifyCustomer
 
     private ?string $marketingOptInLevel = null;
 
-    /** @var Collection<string> */
+    /** @var Collection<int, string> */
     private Collection $taxExemptions;
 
     private ?string $adminGraphqlApiId = null;

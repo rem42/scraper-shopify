@@ -36,7 +36,7 @@ class ShopifyOrderLineItem
     private ?string $variantInventoryManagement = null;
 
     /** @var Collection<int, ShopifyProperty> */
-    private ?Collection $properties;
+    private Collection $properties;
 
     private ?bool $productExists = null;
 
@@ -55,15 +55,15 @@ class ShopifyOrderLineItem
     private ?ShopifyPriceSet $totalDiscountSet = null;
 
     /** @var Collection<int, ShopifyOrderDiscountAllocation> */
-    private ?Collection $discountAllocations;
+    private Collection $discountAllocations;
 
     /** @var Collection<int, ShopifyOrderDuty> */
-    private ?Collection $duties;
+    private Collection $duties;
 
     private ?string $adminGraphqlApiId = null;
 
     /** @var Collection<int, ShopifyOrderTaxLine> */
-    private ?Collection $taxLines;
+    private Collection $taxLines;
 
     public function __construct()
     {

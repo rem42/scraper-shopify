@@ -5,7 +5,6 @@ namespace Scraper\ScraperShopify\Request;
 use Scraper\Scraper\Annotation\Scraper;
 use Scraper\Scraper\Request\RequestBody;
 use Scraper\Scraper\Request\RequestHeaders;
-use Scraper\ScraperShopify\Entity\ShopifyPut;
 use Scraper\ScraperShopify\Factory\SerializerFactory;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
@@ -14,16 +13,12 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
  */
 class ShopifyPutRestRequest extends ShopifyRestRequest implements RequestBody, RequestHeaders
 {
-    protected ?ShopifyPut $shopifyPut = null;
-    protected array $rawData          = [];
+    /** @var array<string, array|int|string> */
+    protected array $rawData = [];
 
-    public function setShopifyPut(ShopifyPut $shopifyPut): self
-    {
-        $this->shopifyPut = $shopifyPut;
-
-        return $this;
-    }
-
+    /**
+     * @param array<string, array|int|string> $rawData
+     */
     public function setRawData(array $rawData): self
     {
         $this->rawData = $rawData;
@@ -42,19 +37,8 @@ class ShopifyPutRestRequest extends ShopifyRestRequest implements RequestBody, R
     {
         $serializer = SerializerFactory::create();
 
-        $data = $this->rawData;
-
-        if ($this->shopifyPut instanceof ShopifyPut) {
-            $data = $this->shopifyPut;
-        }
-
-        return $serializer->serialize($data, 'json', [
+        return $serializer->serialize($this->rawData, 'json', [
             AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
         ]);
-    }
-
-    public function getJson(): array
-    {
-        return $this->rawData;
     }
 }

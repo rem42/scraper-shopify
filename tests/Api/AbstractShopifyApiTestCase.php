@@ -40,7 +40,7 @@ abstract class AbstractShopifyApiTestCase extends TestCase
      */
     protected function executeGetApi(
         string $resource,
-        ?int $id = null,
+        ?string $id = null,
         ?string $subResource = null,
         ?int $subId = null,
         bool $count = false,

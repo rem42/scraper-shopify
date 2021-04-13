@@ -2,9 +2,6 @@
 
 namespace Scraper\ScraperShopify\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-
 class ShopifyOrderRefundLineItem
 {
     private ?int $id = null;
