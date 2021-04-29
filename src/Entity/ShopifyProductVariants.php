@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\Collection;
 
 class ShopifyProductVariants
 {
+    use ShopifyPaginated;
+
     /** @var Collection<int, ShopifyProductVariant> */
     private Collection $variants;
 

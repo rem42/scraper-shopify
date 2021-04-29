@@ -59,35 +59,35 @@ abstract class ShopifyRestRequest extends ScraperRequest implements RequestAuthB
         return $this->resource;
     }
 
-    public function setCount(bool $count): self
+    public function setCount(bool $count): object
     {
         $this->count = $count;
 
         return $this;
     }
 
-    public function setResource(string $resource): self
+    public function setResource(string $resource): object
     {
         $this->resource = $resource;
 
         return $this;
     }
 
-    public function setId(?string $id): self
+    public function setId(?string $id): object
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function setSubResource(?string $subResource): self
+    public function setSubResource(?string $subResource): object
     {
         $this->subResource = $subResource;
 
         return $this;
     }
 
-    public function setSubId(?int $subId): self
+    public function setSubId(?int $subId): object
     {
         $this->subId = $subId;
 
