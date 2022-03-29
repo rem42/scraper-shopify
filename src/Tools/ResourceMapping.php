@@ -2,7 +2,7 @@
 
 namespace Scraper\ScraperShopify\Tools;
 
-use Scraper\ScraperShopify\Entity as Entity;
+use Scraper\ScraperShopify\Entity;
 use Scraper\ScraperShopify\Exception\ShopifyResouceMappingNotFoundException;
 use Scraper\ScraperShopify\Request\ShopifyPostRestRequest;
 use Scraper\ScraperShopify\Request\ShopifyPutRestRequest;

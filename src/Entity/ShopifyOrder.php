@@ -11,6 +11,8 @@ class ShopifyOrder
 
     private ?string $email = null;
 
+    private ?bool $estimatedTaxes = null;
+
     private ?string $closedAt = null;
 
     private ?\DateTimeInterface $createdAt = null;
@@ -23,6 +25,7 @@ class ShopifyOrder
 
     private ?string $token = null;
 
+    /** @deprecated  */
     private ?string $gateway = null;
 
     private ?bool $test = null;
@@ -102,6 +105,7 @@ class ShopifyOrder
     /** @var Collection<int, ShopifyNoteAttribute> */
     private Collection $noteAttributes;
 
+    /** @deprecated  */
     private ?ShopifyPaymentDetails $paymentDetails = null;
 
     /** @var Collection<int, string> */
@@ -201,6 +205,17 @@ class ShopifyOrder
         return $this;
     }
 
+    public function getEstimatedTaxes(): ?bool
+    {
+        return $this->estimatedTaxes;
+    }
+
+    public function setEstimatedTaxes(?bool $estimatedTaxes): self
+    {
+        $this->estimatedTaxes = $estimatedTaxes;
+        return $this;
+    }
+
     public function getClosedAt(): ?string
     {
         return $this->closedAt;
@@ -273,11 +288,17 @@ class ShopifyOrder
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getGateway(): ?string
     {
         return $this->gateway;
     }
 
+    /**
+     * @deprecated
+     */
     public function setGateway(?string $gateway): self
     {
         $this->gateway = $gateway;
@@ -693,11 +714,17 @@ class ShopifyOrder
         return $this;
     }
 
+    /**
+     * @deprecated
+     */
     public function getPaymentDetails(): ?ShopifyPaymentDetails
     {
         return $this->paymentDetails;
     }
 
+    /**
+     * @deprecated
+     */
     public function setPaymentDetails(?ShopifyPaymentDetails $paymentDetails): self
     {
         $this->paymentDetails = $paymentDetails;

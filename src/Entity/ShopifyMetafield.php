@@ -12,6 +12,9 @@ class ShopifyMetafield
 
     private ?string $value = null;
 
+    private ?string $type = null;
+
+    /** @deprecated  */
     private ?string $valueType = null;
 
     private ?string $description = null;
@@ -74,11 +77,28 @@ class ShopifyMetafield
         return $this;
     }
 
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     */
     public function getValueType(): ?string
     {
         return $this->valueType;
     }
 
+    /**
+     * @deprecated
+     */
     public function setValueType(?string $valueType): self
     {
         $this->valueType = $valueType;
