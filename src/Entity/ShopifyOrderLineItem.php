@@ -50,6 +50,8 @@ class ShopifyOrderLineItem
 
     private ?string $fulfillmentStatus = null;
 
+    private ?string $fulfillmentLineItemId = null;
+
     private ?ShopifyPriceSet $priceSet = null;
 
     private ?ShopifyPriceSet $totalDiscountSet = null;
@@ -310,6 +312,17 @@ class ShopifyOrderLineItem
     {
         $this->fulfillmentStatus = $fulfillmentStatus;
 
+        return $this;
+    }
+
+    public function getFulfillmentLineItemId(): ?string
+    {
+        return $this->fulfillmentLineItemId;
+    }
+
+    public function setFulfillmentLineItemId(?string $fulfillmentLineItemId): self
+    {
+        $this->fulfillmentLineItemId = $fulfillmentLineItemId;
         return $this;
     }
 
