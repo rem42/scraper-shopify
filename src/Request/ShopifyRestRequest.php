@@ -115,7 +115,7 @@ abstract class ShopifyRestRequest extends ScraperRequest implements RequestAuthB
 
     public function getVersion(): string
     {
-        return '2021-04';
+        return '2022-04';
     }
 
     public function getAuthBasic(): string
