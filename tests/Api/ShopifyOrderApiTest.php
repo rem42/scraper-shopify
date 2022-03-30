@@ -2,8 +2,6 @@
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
-use Scraper\ScraperShopify\Entity\ShopifyCustomer;
-use Scraper\ScraperShopify\Entity\ShopifyCustomers;
 use Scraper\ScraperShopify\Entity\ShopifyOrder;
 use Scraper\ScraperShopify\Entity\ShopifyOrders;
 
