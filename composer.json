@@ -14,10 +14,10 @@
     "symfony/serializer-pack": "^1.0"
   },
   "require-dev": {
-    "rem42/php-cs-fixer-config": "^3.1",
-    "phpstan/phpstan": "^0.12",
-    "phpunit/phpunit": "^9.0",
-    "php-coveralls/php-coveralls": "^2.0"
+    "rem42/php-cs-fixer-config": "3.1.0",
+    "phpstan/phpstan": "0.12.99",
+    "phpunit/phpunit": "9.5.21",
+    "php-coveralls/php-coveralls": "2.5.2"
   },
   "autoload": {
     "psr-0": {
