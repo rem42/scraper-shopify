@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Request;
 
@@ -13,11 +13,11 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
  */
 class ShopifyPutRestRequest extends ShopifyRestRequest implements RequestBody, RequestHeaders
 {
-    /** @var array<string, array|int|string> */
+    /** @var array<string, array<string, int|string>|int|string> */
     protected array $rawData = [];
 
     /**
-     * @param array<string, array|int|string> $rawData
+     * @param array<string, array<string, int|string>|int|string> $rawData
      */
     public function setRawData(array $rawData): self
     {
@@ -35,10 +35,13 @@ class ShopifyPutRestRequest extends ShopifyRestRequest implements RequestBody, R
 
     public function getBody()
     {
-        $serializer = SerializerFactory::create();
-
-        return $serializer->serialize($this->rawData, 'json', [
-            AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
-        ]);
+        return SerializerFactory::create()
+            ->serialize(
+                $this->rawData,
+                'json', [
+                    AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
+                ]
+            )
+        ;
     }
 }

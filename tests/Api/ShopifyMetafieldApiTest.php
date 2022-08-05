@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
@@ -15,7 +15,7 @@ class ShopifyMetafieldApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyMetafield $result */
         $result = $this->executeGetApi(
             'metafields',
-            721389482,
+            '721389482',
             null,
             null,
             false,
@@ -25,18 +25,18 @@ class ShopifyMetafieldApiTest extends AbstractShopifyApiTestCase
 
         $this->assertInstanceOf(ShopifyMetafield::class, $result);
 
-        $this->assertEquals(721389482, $result->getId());
-        $this->assertEquals('affiliates', $result->getNamespace());
-        $this->assertEquals('app_key', $result->getKey());
-        $this->assertEquals('app_key', $result->getValue());
-        $this->assertEquals('string', $result->getValueType());
-        $this->assertNull($result->getDescription());
-        $this->assertEquals(548380009, $result->getOwnerId());
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getCreatedAt());
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getUpdatedAt());
-        $this->assertEquals('shop', $result->getOwnerResource());
-        $this->assertEquals('string', $result->getType());
-        $this->assertEquals('gid://shopify/Metafield/721389482', $result->getAdminGraphqlApiId());
+        $this->assertEquals(721389482, $result->id);
+        $this->assertEquals('affiliates', $result->namespace);
+        $this->assertEquals('app_key', $result->key);
+        $this->assertEquals('app_key', $result->value);
+        $this->assertEquals('string', $result->valueType);
+        $this->assertNull($result->description);
+        $this->assertEquals(548380009, $result->ownerId);
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->createdAt);
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->updatedAt);
+        $this->assertEquals('shop', $result->ownerResource);
+        $this->assertEquals('string', $result->type);
+        $this->assertEquals('gid://shopify/Metafield/721389482', $result->adminGraphqlApiId);
     }
 
     public function testList(): void
@@ -53,7 +53,7 @@ class ShopifyMetafieldApiTest extends AbstractShopifyApiTestCase
         );
 
         $this->assertInstanceOf(ShopifyMetafields::class, $result);
-        $this->assertCount(1, $result->getMetafields());
-        $this->assertInstanceOf(ShopifyMetafield::class, $result->getMetafields()->first());
+        $this->assertCount(1, $result->metafields);
+        $this->assertInstanceOf(ShopifyMetafield::class, $result->metafields[0]);
     }
 }

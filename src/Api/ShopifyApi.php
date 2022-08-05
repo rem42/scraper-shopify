@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Api;
 
@@ -10,7 +10,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
 abstract class ShopifyApi extends AbstractApi
 {
-    public function execute()
+    public function execute(): object|array|bool|string
     {
         $content = $this->response->getContent();
 
@@ -29,6 +29,7 @@ abstract class ShopifyApi extends AbstractApi
             $isOne = true;
         }
 
+        /** @var array<int|string, int|string> $data */
         $data = json_decode($content, true, 512, \JSON_THROW_ON_ERROR);
 
         if ($isOne) {
@@ -38,6 +39,7 @@ abstract class ShopifyApi extends AbstractApi
             $content = json_encode($data, \JSON_THROW_ON_ERROR);
         }
 
+        /* @phpstan-ignore-next-line */
         return $this->serializer->deserialize(
             $content,
             $className,
@@ -78,6 +80,7 @@ abstract class ShopifyApi extends AbstractApi
             return [];
         }
 
+        /** @var array<string, string> $pageInfo */
         $pageInfo              = json_decode(base64_decode($data['page_info']), true, 512, \JSON_THROW_ON_ERROR);
         $pageInfo['page_info'] = $data['page_info'];
 

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tools;
 
@@ -115,23 +115,6 @@ class ResourceMapping
             throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $realResource);
         }
 
-        $resource = self::resourcesMapping[$realResource];
-
-        if (!isset($resource['singular'])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found singular for this resource: ' . $realResource);
-        }
-
-        return $resource['singular'];
-    }
-
-    public static function isFile(ShopifyRestRequest $shopifyGetRequest): bool
-    {
-        if (!isset(self::resourcesMapping[$shopifyGetRequest->getResource()])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $shopifyGetRequest->getResource());
-        }
-
-        $resource = self::resourcesMapping[$shopifyGetRequest->getResource()];
-
-        return $resource['isFile'] ?? false;
+        return self::resourcesMapping[$realResource]['singular'];
     }
 }

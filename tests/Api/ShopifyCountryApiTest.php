@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
@@ -15,7 +15,7 @@ class ShopifyCountryApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyCountry $result */
         $result = $this->executeGetApi(
             'countries',
-            879921427,
+            '879921427',
             null,
             null,
             false,
@@ -25,7 +25,7 @@ class ShopifyCountryApiTest extends AbstractShopifyApiTestCase
 
         $this->assertInstanceOf(ShopifyCountry::class, $result);
 
-        $this->assertEquals(879921427, $result->getId());
+        $this->assertEquals(879921427, $result->id);
     }
 
     public function testList(): void
@@ -42,7 +42,7 @@ class ShopifyCountryApiTest extends AbstractShopifyApiTestCase
         );
 
         $this->assertInstanceOf(ShopifyCountries::class, $result);
-        $this->assertCount(3, $result->getCountries());
-        $this->assertInstanceOf(ShopifyCountry::class, $result->getCountries()->first());
+        $this->assertCount(3, $result->countries);
+        $this->assertInstanceOf(ShopifyCountry::class, $result->countries[0]);
     }
 }

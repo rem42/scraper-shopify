@@ -1,34 +1,21 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderReceipt
 {
-    private ?bool $testcase = null;
-
-    private ?string $authorization = null;
-
-    public function getTestcase(): ?bool
-    {
-        return $this->testcase;
-    }
+    public ?bool $testcase        = null;
+    public ?string $authorization = null;
 
     public function setTestcase(?bool $testcase): self
     {
         $this->testcase = $testcase;
-
         return $this;
-    }
-
-    public function getAuthorization(): ?string
-    {
-        return $this->authorization;
     }
 
     public function setAuthorization(?string $authorization): self
     {
         $this->authorization = $authorization;
-
         return $this;
     }
 }
