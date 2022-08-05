@@ -4,14 +4,14 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProvince
 {
-    public ?int $id              = null;
-    public ?int $countryId       = null;
-    public ?string $name         = null;
-    public ?string $code         = null;
-    public ?float $tax           = null;
-    public ?string $taxName      = null;
-    public ?string $taxType      = null;
-    public ?int $shippingZoneId  = null;
+    public ?int $id = null;
+    public ?int $countryId = null;
+    public ?string $name = null;
+    public ?string $code = null;
+    public ?float $tax = null;
+    public ?string $taxName = null;
+    public ?string $taxType = null;
+    public ?int $shippingZoneId = null;
     public ?float $taxPercentage = null;
 
     public function setId(?int $id): self

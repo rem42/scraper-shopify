@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProperty
 {
-    public ?string $name  = null;
+    public ?string $name = null;
     public ?string $value = null;
 
     public function setName(?string $name): self

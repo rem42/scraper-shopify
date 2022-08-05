@@ -4,8 +4,8 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyPageInfo
 {
-    public ?string $pageInfo  = null;
-    public ?int $lastId       = null;
+    public ?string $pageInfo = null;
+    public ?int $lastId = null;
     public ?string $lastValue = null;
     public ?string $direction = null;
 

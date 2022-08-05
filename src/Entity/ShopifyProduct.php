@@ -4,20 +4,20 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProduct
 {
-    public ?int $id                         = null;
-    public ?string $title                   = null;
-    public ?string $bodyHtml                = null;
-    public ?string $vendor                  = null;
-    public ?string $productType             = null;
-    public ?\DateTimeInterface $createdAt   = null;
-    public ?string $handle                  = null;
-    public ?\DateTimeInterface $updatedAt   = null;
+    public ?int $id = null;
+    public ?string $title = null;
+    public ?string $bodyHtml = null;
+    public ?string $vendor = null;
+    public ?string $productType = null;
+    public ?\DateTimeInterface $createdAt = null;
+    public ?string $handle = null;
+    public ?\DateTimeInterface $updatedAt = null;
     public ?\DateTimeInterface $publishedAt = null;
-    public ?string $templateSuffix          = null;
-    public ?string $status                  = null;
-    public ?string $publishedScope          = null;
-    public ?string $tags                    = null;
-    public ?string $adminGraphqlApiId       = null;
+    public ?string $templateSuffix = null;
+    public ?string $status = null;
+    public ?string $publishedScope = null;
+    public ?string $tags = null;
+    public ?string $adminGraphqlApiId = null;
     /** @var array<int, ShopifyProductVariant> */
     public array $variants = [];
     /** @var array<int, ShopifyProductOption> */

@@ -4,14 +4,14 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderRefundLineItem
 {
-    public ?int $id                      = null;
-    public ?int $quantity                = null;
-    public ?int $orderId                 = null;
-    public ?int $lineItemId              = null;
-    public ?int $locationId              = null;
-    public ?string $restockType          = null;
-    public ?float $subtotal              = null;
-    public ?float $totalTax              = null;
+    public ?int $id = null;
+    public ?int $quantity = null;
+    public ?int $orderId = null;
+    public ?int $lineItemId = null;
+    public ?int $locationId = null;
+    public ?string $restockType = null;
+    public ?float $subtotal = null;
+    public ?float $totalTax = null;
     public ?ShopifyPriceSet $subtotalSet = null;
     public ?ShopifyPriceSet $totalTaxSet = null;
     public ?ShopifyOrderLineItem $lineItem;

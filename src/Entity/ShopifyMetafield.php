@@ -4,19 +4,19 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyMetafield
 {
-    public ?int $id           = null;
+    public ?int $id = null;
     public ?string $namespace = null;
-    public ?string $key       = null;
-    public ?string $value     = null;
-    public ?string $type      = null;
+    public ?string $key = null;
+    public ?string $value = null;
+    public ?string $type = null;
     /** @deprecated  */
-    public ?string $valueType             = null;
-    public ?string $description           = null;
-    public ?int $ownerId                  = null;
+    public ?string $valueType = null;
+    public ?string $description = null;
+    public ?int $ownerId = null;
     public ?\DateTimeInterface $createdAt = null;
     public ?\DateTimeInterface $updatedAt = null;
-    public ?string $ownerResource         = null;
-    public ?string $adminGraphqlApiId     = null;
+    public ?string $ownerResource = null;
+    public ?string $adminGraphqlApiId = null;
 
     public function setId(?int $id): self
     {

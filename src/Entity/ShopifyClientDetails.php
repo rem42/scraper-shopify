@@ -5,11 +5,11 @@ namespace Scraper\ScraperShopify\Entity;
 class ShopifyClientDetails
 {
     public ?string $acceptLanguage = null;
-    public ?string $browserHeight  = null;
-    public ?string $browserIp      = null;
-    public ?string $browserWidth   = null;
-    public ?string $sessionHash    = null;
-    public ?string $userAgent      = null;
+    public ?string $browserHeight = null;
+    public ?string $browserIp = null;
+    public ?string $browserWidth = null;
+    public ?string $sessionHash = null;
+    public ?string $userAgent = null;
 
     public function setAcceptLanguage(?string $acceptLanguage): self
     {

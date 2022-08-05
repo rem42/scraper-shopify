@@ -4,13 +4,13 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyDiscountApplication
 {
-    public ?string $type             = null;
-    public ?string $value            = null;
-    public ?string $valueType        = null;
+    public ?string $type = null;
+    public ?string $value = null;
+    public ?string $valueType = null;
     public ?string $allocationMethod = null;
-    public ?string $targetSelection  = null;
-    public ?string $targetType       = null;
-    public ?string $code             = null;
+    public ?string $targetSelection = null;
+    public ?string $targetType = null;
+    public ?string $code = null;
 
     public function setType(?string $type): self
     {

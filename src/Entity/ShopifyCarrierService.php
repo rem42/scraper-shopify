@@ -4,14 +4,14 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyCarrierService
 {
-    public ?int $id                    = null;
-    public ?string $name               = null;
-    public ?bool $active               = null;
-    public ?bool $serviceDiscovery     = null;
+    public ?int $id = null;
+    public ?string $name = null;
+    public ?bool $active = null;
+    public ?bool $serviceDiscovery = null;
     public ?string $carrierServiceType = null;
-    public ?string $adminGraphqlApiId  = null;
-    public ?string $format             = null;
-    public ?string $callbackUrl        = null;
+    public ?string $adminGraphqlApiId = null;
+    public ?string $format = null;
+    public ?string $callbackUrl = null;
 
     public function setId(?int $id): self
     {

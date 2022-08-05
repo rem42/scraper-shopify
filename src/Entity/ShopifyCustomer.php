@@ -4,30 +4,30 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyCustomer
 {
-    public ?int $id                                       = null;
-    public ?string $email                                 = null;
-    public ?bool $acceptsMarketing                        = null;
-    public ?\DateTimeInterface $createdAt                 = null;
-    public ?\DateTimeInterface $updatedAt                 = null;
-    public ?string $firstName                             = null;
-    public ?string $lastName                              = null;
-    public ?int $ordersCount                              = null;
-    public ?string $state                                 = null;
-    public ?string $totalSpent                            = null;
-    public ?int $lastOrderId                              = null;
-    public ?string $note                                  = null;
-    public ?bool $verifiedEmail                           = null;
-    public ?string $multipassIdentifier                   = null;
-    public ?bool $taxExempt                               = null;
-    public ?string $phone                                 = null;
-    public ?string $tags                                  = null;
-    public ?string $lastOrderName                         = null;
-    public ?string $currency                              = null;
+    public ?int $id = null;
+    public ?string $email = null;
+    public ?bool $acceptsMarketing = null;
+    public ?\DateTimeInterface $createdAt = null;
+    public ?\DateTimeInterface $updatedAt = null;
+    public ?string $firstName = null;
+    public ?string $lastName = null;
+    public ?int $ordersCount = null;
+    public ?string $state = null;
+    public ?string $totalSpent = null;
+    public ?int $lastOrderId = null;
+    public ?string $note = null;
+    public ?bool $verifiedEmail = null;
+    public ?string $multipassIdentifier = null;
+    public ?bool $taxExempt = null;
+    public ?string $phone = null;
+    public ?string $tags = null;
+    public ?string $lastOrderName = null;
+    public ?string $currency = null;
     public ?\DateTimeInterface $acceptsMarketingUpdatedAt = null;
-    public ?string $marketingOptInLevel                   = null;
+    public ?string $marketingOptInLevel = null;
     /** @var array<int, string> */
-    public array $taxExemptions                    = [];
-    public ?string $adminGraphqlApiId              = null;
+    public array $taxExemptions = [];
+    public ?string $adminGraphqlApiId = null;
     public ?ShopifyCustomerAddress $defaultAddress = null;
 
     public function addTaxExemption(string $taxExemption): self

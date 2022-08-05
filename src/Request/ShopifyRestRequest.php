@@ -29,7 +29,7 @@ abstract class ShopifyRestRequest extends ScraperRequest implements RequestAuthB
         string $username,
         string $password
     ) {
-        $this->host     = $host;
+        $this->host = $host;
         $this->username = $username;
         $this->password = $password;
     }

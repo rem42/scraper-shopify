@@ -4,11 +4,11 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyInventoryLevel
 {
-    public ?int $inventoryItemId          = null;
-    public ?int $locationId               = null;
-    public ?int $available                = null;
+    public ?int $inventoryItemId = null;
+    public ?int $locationId = null;
+    public ?int $available = null;
     public ?\DateTimeInterface $updatedAt = null;
-    public ?string $adminGraphqlApiId     = null;
+    public ?string $adminGraphqlApiId = null;
 
     public function setInventoryItemId(?int $inventoryItemId): self
     {

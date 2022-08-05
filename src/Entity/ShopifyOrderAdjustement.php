@@ -4,14 +4,14 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderAdjustement
 {
-    public ?int $id                       = null;
-    public ?int $orderId                  = null;
-    public ?int $refundId                 = null;
-    public ?string $amount                = null;
-    public ?string $taxAmount             = null;
-    public ?string $kind                  = null;
-    public ?string $reason                = null;
-    public ?ShopifyPriceSet $amountSet    = null;
+    public ?int $id = null;
+    public ?int $orderId = null;
+    public ?int $refundId = null;
+    public ?string $amount = null;
+    public ?string $taxAmount = null;
+    public ?string $kind = null;
+    public ?string $reason = null;
+    public ?ShopifyPriceSet $amountSet = null;
     public ?ShopifyPriceSet $taxAmountSet = null;
 
     public function setId(?int $id): self

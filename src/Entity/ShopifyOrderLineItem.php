@@ -4,35 +4,35 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderLineItem
 {
-    public ?int $id                            = null;
-    public ?int $variantId                     = null;
-    public ?string $title                      = null;
-    public ?int $quantity                      = null;
-    public ?string $sku                        = null;
-    public ?string $variantTitle               = null;
-    public ?string $vendor                     = null;
-    public ?string $fulfillmentService         = null;
-    public ?int $productId                     = null;
-    public ?bool $requiresShipping             = null;
-    public ?bool $taxable                      = null;
-    public ?bool $giftCard                     = null;
-    public ?string $name                       = null;
+    public ?int $id = null;
+    public ?int $variantId = null;
+    public ?string $title = null;
+    public ?int $quantity = null;
+    public ?string $sku = null;
+    public ?string $variantTitle = null;
+    public ?string $vendor = null;
+    public ?string $fulfillmentService = null;
+    public ?int $productId = null;
+    public ?bool $requiresShipping = null;
+    public ?bool $taxable = null;
+    public ?bool $giftCard = null;
+    public ?string $name = null;
     public ?string $variantInventoryManagement = null;
     /** @var array<int, ShopifyProperty> */
-    public array $properties                  = [];
-    public ?bool $productExists               = null;
-    public ?int $fulfillableQuantity          = null;
-    public ?int $grams                        = null;
-    public ?string $price                     = null;
-    public ?string $totalDiscount             = null;
-    public ?string $fulfillmentStatus         = null;
-    public ?string $fulfillmentLineItemId     = null;
-    public ?ShopifyPriceSet $priceSet         = null;
+    public array $properties = [];
+    public ?bool $productExists = null;
+    public ?int $fulfillableQuantity = null;
+    public ?int $grams = null;
+    public ?string $price = null;
+    public ?string $totalDiscount = null;
+    public ?string $fulfillmentStatus = null;
+    public ?string $fulfillmentLineItemId = null;
+    public ?ShopifyPriceSet $priceSet = null;
     public ?ShopifyPriceSet $totalDiscountSet = null;
     /** @var array<int, ShopifyOrderDiscountAllocation> */
     public array $discountAllocations = [];
     /** @var array<int, ShopifyOrderDuty> */
-    public array $duties              = [];
+    public array $duties = [];
     public ?string $adminGraphqlApiId = null;
     /** @var array<int, ShopifyOrderTaxLine> */
     public array $taxLines = [];

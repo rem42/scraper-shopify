@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyPriceSet
 {
-    public ?ShopifyPrice $shopMoney        = null;
+    public ?ShopifyPrice $shopMoney = null;
     public ?ShopifyPrice $presentmentMoney = null;
 
     public function setShopMoney(?ShopifyPrice $shopMoney): self

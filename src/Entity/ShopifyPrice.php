@@ -5,7 +5,7 @@ namespace Scraper\ScraperShopify\Entity;
 class ShopifyPrice
 {
     public ?string $currencyCode = null;
-    public ?string $amount       = null;
+    public ?string $amount = null;
 
     public function setCurrencyCode(?string $currencyCode): self
     {

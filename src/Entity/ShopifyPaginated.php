@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 trait ShopifyPaginated
 {
-    public ?ShopifyPageInfo $nextPageInfo     = null;
+    public ?ShopifyPageInfo $nextPageInfo = null;
     public ?ShopifyPageInfo $previousPageInfo = null;
 
     public function setNextPageInfo(?ShopifyPageInfo $nextPageInfo): self

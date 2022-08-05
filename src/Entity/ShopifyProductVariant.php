@@ -4,33 +4,33 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProductVariant
 {
-    public ?int $id                       = null;
-    public ?int $productId                = null;
-    public ?string $title                 = null;
-    public ?string $price                 = null;
-    public ?string $sku                   = null;
-    public ?int $position                 = null;
-    public ?string $inventoryPolicy       = null;
-    public ?string $compareAtPrice        = null;
-    public ?string $fulfillmentService    = null;
-    public ?string $inventoryManagement   = null;
-    public ?string $option1               = null;
-    public ?string $option2               = null;
-    public ?string $option3               = null;
+    public ?int $id = null;
+    public ?int $productId = null;
+    public ?string $title = null;
+    public ?string $price = null;
+    public ?string $sku = null;
+    public ?int $position = null;
+    public ?string $inventoryPolicy = null;
+    public ?string $compareAtPrice = null;
+    public ?string $fulfillmentService = null;
+    public ?string $inventoryManagement = null;
+    public ?string $option1 = null;
+    public ?string $option2 = null;
+    public ?string $option3 = null;
     public ?\DateTimeInterface $createdAt = null;
     public ?\DateTimeInterface $updatedAt = null;
-    public ?bool $taxable                 = null;
-    public ?string $barcode               = null;
-    public ?int $grams                    = null;
-    public ?int $imageId                  = null;
-    public ?float $weight                 = null;
-    public ?string $weightUnit            = null;
-    public ?int $inventoryItemId          = null;
-    public ?int $inventoryQuantity        = null;
-    public ?int $oldInventoryQuantity     = null;
-    public ?string $taxCode               = null;
-    public ?bool $requiresShipping        = null;
-    public ?string $adminGraphqlApiId     = null;
+    public ?bool $taxable = null;
+    public ?string $barcode = null;
+    public ?int $grams = null;
+    public ?int $imageId = null;
+    public ?float $weight = null;
+    public ?string $weightUnit = null;
+    public ?int $inventoryItemId = null;
+    public ?int $inventoryQuantity = null;
+    public ?int $oldInventoryQuantity = null;
+    public ?string $taxCode = null;
+    public ?bool $requiresShipping = null;
+    public ?string $adminGraphqlApiId = null;
     /** @var array<int, ShopifyProductPresentmentPrice> */
     public array $presentmentPrices = [];
 

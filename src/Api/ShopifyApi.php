@@ -81,7 +81,7 @@ abstract class ShopifyApi extends AbstractApi
         }
 
         /** @var array<string, string> $pageInfo */
-        $pageInfo              = json_decode(base64_decode($data['page_info']), true, 512, \JSON_THROW_ON_ERROR);
+        $pageInfo = json_decode(base64_decode($data['page_info']), true, 512, \JSON_THROW_ON_ERROR);
         $pageInfo['page_info'] = $data['page_info'];
 
         return $pageInfo;
@@ -92,7 +92,7 @@ abstract class ShopifyApi extends AbstractApi
      */
     private function handlePageInfo(array &$data): void
     {
-        $data['next_page_info']     = $this->getLinkHeaderUrl('next');
+        $data['next_page_info'] = $this->getLinkHeaderUrl('next');
         $data['previous_page_info'] = $this->getLinkHeaderUrl('previous');
     }
 }

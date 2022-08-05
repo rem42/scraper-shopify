@@ -4,10 +4,10 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProductOption
 {
-    public ?int $id        = null;
+    public ?int $id = null;
     public ?int $productId = null;
-    public ?string $name   = null;
-    public ?int $position  = null;
+    public ?string $name = null;
+    public ?int $position = null;
     /** @var array<int, string> */
     public array $values = [];
 

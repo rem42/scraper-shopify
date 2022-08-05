@@ -4,9 +4,9 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderDiscountAllocation
 {
-    public ?string $amount                = null;
+    public ?string $amount = null;
     public ?int $discountApplicationIndex = null;
-    public ?ShopifyPriceSet $amountSet    = null;
+    public ?ShopifyPriceSet $amountSet = null;
 
     public function setAmount(?string $amount): self
     {

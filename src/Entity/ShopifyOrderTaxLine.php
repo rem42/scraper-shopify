@@ -4,9 +4,9 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderTaxLine
 {
-    public ?string $price             = null;
-    public ?float $rate               = null;
-    public ?string $title             = null;
+    public ?string $price = null;
+    public ?float $rate = null;
+    public ?string $title = null;
     public ?ShopifyPriceSet $priceSet = null;
 
     public function setPrice(?string $price): self

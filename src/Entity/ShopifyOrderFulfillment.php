@@ -4,26 +4,26 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderFulfillment
 {
-    public ?int $id                       = null;
-    public ?int $orderId                  = null;
-    public ?string $status                = null;
+    public ?int $id = null;
+    public ?int $orderId = null;
+    public ?string $status = null;
     public ?\DateTimeInterface $createdAt = null;
-    public ?string $service               = null;
+    public ?string $service = null;
     public ?\DateTimeInterface $updatedAt = null;
-    public ?string $trackingCompany       = null;
-    public ?string $shipmentStatus        = null;
-    public ?int $locationId               = null;
+    public ?string $trackingCompany = null;
+    public ?string $shipmentStatus = null;
+    public ?int $locationId = null;
     /** @var array<int, ShopifyOrderLineItem> */
-    public array $lineItems        = [];
+    public array $lineItems = [];
     public ?string $trackingNumber = null;
     /** @var array<int, string> */
     public array $trackingNumbers = [];
-    public ?string $trackingUrl   = null;
+    public ?string $trackingUrl = null;
     /** @var array<int, string> */
-    public array $trackingUrls           = [];
+    public array $trackingUrls = [];
     public ?ShopifyOrderReceipt $receipt = null;
-    public ?string $name                 = null;
-    public ?string $adminGraphqlApiId    = null;
+    public ?string $name = null;
+    public ?string $adminGraphqlApiId = null;
 
     public function addLineItem(ShopifyOrderLineItem $lineItem): self
     {

@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyProductPresentmentPrice
 {
-    public ?ShopifyPrice $price    = null;
+    public ?ShopifyPrice $price = null;
     public ?string $compareAtPrice = null;
 
     public function setPrice(?ShopifyPrice $price): self

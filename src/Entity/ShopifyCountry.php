@@ -4,10 +4,10 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyCountry
 {
-    public ?int $id         = null;
-    public ?string $name    = null;
-    public ?float $tax      = null;
-    public ?string $code    = null;
+    public ?int $id = null;
+    public ?string $name = null;
+    public ?float $tax = null;
+    public ?string $code = null;
     public ?string $taxName = null;
     /** @var array<int, ShopifyProvince> */
     public array $provinces = [];

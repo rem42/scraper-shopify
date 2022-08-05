@@ -4,17 +4,17 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderShippingLine
 {
-    public ?int $id                             = null;
-    public ?string $title                       = null;
-    public ?string $price                       = null;
-    public ?string $code                        = null;
-    public ?string $source                      = null;
-    public ?string $phone                       = null;
-    public ?int $requestedFulfillmentServiceId  = null;
-    public ?string $deliveryCategory            = null;
-    public ?string $carrierIdentifier           = null;
-    public ?int $discountedPrice                = null;
-    public ?ShopifyPriceSet $priceSet           = null;
+    public ?int $id = null;
+    public ?string $title = null;
+    public ?string $price = null;
+    public ?string $code = null;
+    public ?string $source = null;
+    public ?string $phone = null;
+    public ?int $requestedFulfillmentServiceId = null;
+    public ?string $deliveryCategory = null;
+    public ?string $carrierIdentifier = null;
+    public ?int $discountedPrice = null;
+    public ?ShopifyPriceSet $priceSet = null;
     public ?ShopifyPriceSet $discountedPriceSet = null;
     /** @var array<int, ShopifyOrderDiscountAllocation> */
     public array $discountAllocations = [];

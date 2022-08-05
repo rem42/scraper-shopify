@@ -4,24 +4,24 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyCustomerAddress
 {
-    public ?int $id              = null;
-    public ?int $customerId      = null;
-    public ?string $firstName    = null;
-    public ?string $address1     = null;
-    public ?string $phone        = null;
-    public ?string $city         = null;
-    public ?string $zip          = null;
-    public ?string $province     = null;
-    public ?string $country      = null;
-    public ?string $lastName     = null;
-    public ?string $address2     = null;
-    public ?string $company      = null;
-    public ?float $latitude      = null;
-    public ?float $longitude     = null;
-    public ?string $name         = null;
-    public ?string $countryCode  = null;
+    public ?int $id = null;
+    public ?int $customerId = null;
+    public ?string $firstName = null;
+    public ?string $address1 = null;
+    public ?string $phone = null;
+    public ?string $city = null;
+    public ?string $zip = null;
+    public ?string $province = null;
+    public ?string $country = null;
+    public ?string $lastName = null;
+    public ?string $address2 = null;
+    public ?string $company = null;
+    public ?float $latitude = null;
+    public ?float $longitude = null;
+    public ?string $name = null;
+    public ?string $countryCode = null;
     public ?string $provinceCode = null;
-    public ?bool $default        = null;
+    public ?bool $default = null;
 
     public function setId(?int $id): self
     {

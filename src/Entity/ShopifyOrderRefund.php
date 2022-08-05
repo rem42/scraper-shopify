@@ -4,17 +4,17 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderRefund
 {
-    public ?int $id                         = null;
-    public ?int $orderId                    = null;
-    public ?\DateTimeInterface $createdAt   = null;
-    public ?string $note                    = null;
-    public ?int $userId                     = null;
+    public ?int $id = null;
+    public ?int $orderId = null;
+    public ?\DateTimeInterface $createdAt = null;
+    public ?string $note = null;
+    public ?int $userId = null;
     public ?\DateTimeInterface $processedAt = null;
-    public ?bool $restock                   = null;
+    public ?bool $restock = null;
     /** @var array<int, ShopifyOrderDuty> */
-    public array $duties                    = [];
+    public array $duties = [];
     public ?ShopifyPriceSet $totalDutiesSet = null;
-    public ?string $adminGraphqlApiId       = null;
+    public ?string $adminGraphqlApiId = null;
     /** @var array<int, ShopifyOrderRefundLineItem> */
     public array $refundLineItems = [];
     /** @var array<int, ShopifyOrderRefundTransaction> */

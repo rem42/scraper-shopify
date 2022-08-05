@@ -4,19 +4,19 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyInventoryItem
 {
-    public ?int $id                       = null;
-    public ?string $sku                   = null;
+    public ?int $id = null;
+    public ?string $sku = null;
     public ?\DateTimeInterface $createdAt = null;
     public ?\DateTimeInterface $updatedAt = null;
-    public ?bool $requiresShipping        = null;
-    public ?string $cost                  = null;
-    public ?string $countryCodeOfOrigin   = null;
-    public ?string $provinceCodeOfOrigin  = null;
-    public ?string $harmonizedSystemCode  = null;
-    public ?bool $tracked                 = null;
+    public ?bool $requiresShipping = null;
+    public ?string $cost = null;
+    public ?string $countryCodeOfOrigin = null;
+    public ?string $provinceCodeOfOrigin = null;
+    public ?string $harmonizedSystemCode = null;
+    public ?bool $tracked = null;
     /** @var array<int, string> */
     public array $countryHarmonizedSystemCodes = [];
-    public ?string $adminGraphqlApiId          = null;
+    public ?string $adminGraphqlApiId = null;
 
     public function addCountryHarmonizedSystemCode(string $countryHarmonizedSystemCode): self
     {

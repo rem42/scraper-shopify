@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderDuty
 {
-    public ?int $dutyId                = null;
+    public ?int $dutyId = null;
     public ?ShopifyPriceSet $amountSet = null;
 
     public function setDutyId(?int $dutyId): self

@@ -4,7 +4,7 @@ namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyOrderReceipt
 {
-    public ?bool $testcase        = null;
+    public ?bool $testcase = null;
     public ?string $authorization = null;
 
     public function setTestcase(?bool $testcase): self
