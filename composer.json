@@ -9,12 +9,12 @@
   }],
   "require" : {
     "php": "^8.1",
-    "rem42/scraper": "3.x-dev",
-    "symfony/serializer-pack": "^1.1"
+    "rem42/scraper": "^3.0",
+    "symfony/serializer-pack": "^1.2"
   },
   "require-dev": {
     "rem42/php-cs-fixer-config": "^3.4",
-    "phpstan/phpstan": "^1.8",
+    "phpstan/phpstan": "^1.9",
     "phpunit/phpunit": "^9.5"
   },
   "autoload": {

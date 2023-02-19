@@ -80,9 +80,12 @@ abstract class ShopifyApi extends AbstractApi
             return [];
         }
 
+        /** @var string $dataPageInfo */
+        $dataPageInfo = $data['page_info'];
+
         /** @var array<string, string> $pageInfo */
-        $pageInfo = json_decode(base64_decode($data['page_info']), true, 512, \JSON_THROW_ON_ERROR);
-        $pageInfo['page_info'] = $data['page_info'];
+        $pageInfo = json_decode(base64_decode($dataPageInfo), true, 512, \JSON_THROW_ON_ERROR);
+        $pageInfo['page_info'] = $dataPageInfo;
 
         return $pageInfo;
     }

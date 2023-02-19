@@ -2,15 +2,14 @@
 
 namespace Scraper\ScraperShopify\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Method;
 use Scraper\Scraper\Request\RequestBody;
+use Scraper\Scraper\Attribute\Scraper;
 use Scraper\Scraper\Request\RequestHeaders;
 use Scraper\ScraperShopify\Factory\SerializerFactory;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 
-/**
- * @Scraper(method="PUT")
- */
+#[Scraper(method: Method::PUT)]
 class ShopifyPutRestRequest extends ShopifyRestRequest implements RequestBody, RequestHeaders
 {
     /** @var array<string, array<string, int|string>|int|string> */
