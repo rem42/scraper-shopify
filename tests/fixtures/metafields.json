@@ -1,18 +1,17 @@
 {
   "metafields": [
     {
-      "id": 721389482,
-      "namespace": "affiliates",
-      "key": "app_key",
-      "value": "app_key",
-      "value_type": "string",
+      "id": 1069228934,
+      "namespace": "my_fields",
+      "key": "sponsor",
+      "value": "Shopify",
       "description": null,
-      "owner_id": 548380009,
-      "created_at": "2022-03-15T13:35:42-04:00",
-      "updated_at": "2022-03-15T13:35:42-04:00",
-      "owner_resource": "shop",
-      "type": "string",
-      "admin_graphql_api_id": "gid://shopify/Metafield/721389482"
+      "owner_id": 382285388,
+      "created_at": "2023-03-09T18:28:11-05:00",
+      "updated_at": "2023-03-09T18:28:11-05:00",
+      "owner_resource": "blog",
+      "type": "single_line_text_field",
+      "admin_graphql_api_id": "gid://shopify/Metafield/1069228934"
     }
   ]
 }

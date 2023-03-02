@@ -1,11 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class Customer
 {
+    use CallLimit;
     public ?bool $acceptsMarketing = null;
-    public ?string $acceptsMarketingUpdatedAt = null;
+    public ?\DateTimeInterface $acceptsMarketingUpdatedAt = null;
     /** @var array<int, Address> */
     public array $addresses = [];
     public ?string $currency = null;
@@ -20,7 +21,7 @@ class Customer
     public ?string $lastOrderName = null;
     public ?Metafield $metafield = null;
     public ?string $marketingOptInLevel = null;
-    public $multipassIdentifier = null;
+    public ?string $multipassIdentifier = null;
     public ?string $note = null;
     public ?int $ordersCount = null;
     public ?string $password = null;
@@ -47,6 +48,4 @@ class Customer
         $this->taxExemptions[] = $taxExemption;
         return $this;
     }
-
-
 }

@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 abstract class AbstractAddress
 {
+    use CallLimit;
     public ?int $id = null;
     public ?int $customerId = null;
     public ?string $firstName = null;

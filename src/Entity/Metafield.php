@@ -1,14 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class Metafield
 {
+    use CallLimit;
     public ?int $id = null;
     public ?string $namespace = null;
     public ?string $key = null;
     public ?string $value = null;
-    public $description = null;
+    public ?string $description = null;
     public ?int $ownerId = null;
     public ?\DateTimeInterface $createdAt = null;
     public ?\DateTimeInterface $updatedAt = null;

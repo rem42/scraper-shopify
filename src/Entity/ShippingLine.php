@@ -1,33 +1,24 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class ShippingLine
 {
-    public ?int $id = null;
-    public $carrierIdentifier = null;
     public ?string $code = null;
-    public $deliveryCategory = null;
-    public ?string $discountedPrice = null;
-    public ?DiscountedPriceSet $discountedPriceSet = null;
-    public $phone = null;
     public ?string $price = null;
     public ?PriceSet $priceSet = null;
-    public $requestedFulfillmentServiceId = null;
+    public ?string $discountedPrice = null;
+    public ?DiscountedPriceSet $discountedPriceSet = null;
     public ?string $source = null;
     public ?string $title = null;
+    /** @var array<int, TaxLine> */
     public array $taxLines = [];
-    public array $discountAllocations = [];
+    public ?string $carrierIdentifier = null;
+    public ?string $requestedFulfillmentServiceId = null;
 
-    public function addTaxLine($taxLine): self
+    public function addTaxLine(TaxLine $taxLine): self
     {
         $this->taxLines[] = $taxLine;
-        return $this;
-    }
-
-    public function addDiscountAllocation($discountAllocation): self
-    {
-        $this->discountAllocations[] = $discountAllocation;
         return $this;
     }
 }

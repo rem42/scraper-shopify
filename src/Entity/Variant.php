@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class Variant
 {
+    use CallLimit;
     public ?int $id = null;
     public ?int $productId = null;
     public ?string $title = null;
@@ -11,12 +12,12 @@ class Variant
     public ?string $sku = null;
     public ?int $position = null;
     public ?string $inventoryPolicy = null;
-    public $compareAtPrice = null;
+    public ?string $compareAtPrice = null;
     public ?string $fulfillmentService = null;
     public ?string $inventoryManagement = null;
     public ?string $option1 = null;
-    public $option2 = null;
-    public $option3 = null;
+    public ?string $option2 = null;
+    public ?string $option3 = null;
     public ?\DateTimeInterface $createdAt = null;
     public ?\DateTimeInterface $updatedAt = null;
     public ?bool $taxable = null;

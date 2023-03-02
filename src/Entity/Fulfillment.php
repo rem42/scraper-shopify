@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class Fulfillment
 {
+    use CallLimit;
     public ?\DateTimeInterface $createdAt = null;
     public ?int $id = null;
     public ?string $adminGraphqlApiId = null;
