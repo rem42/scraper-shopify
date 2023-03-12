@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Factory;
 
@@ -24,7 +24,7 @@ class SerializerFactory
 
         $metadataAwareNameConverter = new MetadataAwareNameConverter($classMetadataFactory, new CamelCaseToSnakeCaseNameConverter());
 
-        $encoders    = ['json' => new JsonEncoder(), 'xml' => new XmlEncoder()];
+        $encoders = ['json' => new JsonEncoder(), 'xml' => new XmlEncoder()];
         $normalizers = [
             new DateTimeNormalizer([
                 DateTimeNormalizer::FORMAT_KEY => 'Y-m-d H:i:s',

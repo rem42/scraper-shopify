@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tools;
 
@@ -15,58 +15,58 @@ class ResourceMapping
             'singular' => 'report',
         ],
         'addresses' => [
-            'list'     => Entity\ShopifyCustomerAddresses::class,
-            'one'      => Entity\ShopifyCustomerAddress::class,
+            'list' => Entity\ShopifyCustomerAddresses::class,
+            'one' => Entity\ShopifyCustomerAddress::class,
             'singular' => 'address',
         ],
         'carrier_services' => [
-            'list'     => Entity\ShopifyCarrierServices::class,
-            'one'      => Entity\ShopifyCarrierService::class,
+            'list' => Entity\ShopifyCarrierServices::class,
+            'one' => Entity\ShopifyCarrierService::class,
             'singular' => 'carrier_service',
         ],
         'countries' => [
-            'list'     => Entity\ShopifyCountries::class,
-            'one'      => Entity\ShopifyCountry::class,
+            'list' => Entity\ShopifyCountries::class,
+            'one' => Entity\ShopifyCountry::class,
             'singular' => 'country',
         ],
         'customers' => [
-            'list'     => Entity\ShopifyCustomers::class,
-            'one'      => Entity\ShopifyCustomer::class,
+            'list' => Entity\ShopifyCustomers::class,
+            'one' => Entity\ShopifyCustomer::class,
             'singular' => 'customer',
         ],
         'fulfillments' => [
-            'list'     => Entity\ShopifyFulfillments::class,
-            'one'      => Entity\ShopifyFulfillment::class,
+            'list' => Entity\ShopifyFulfillments::class,
+            'one' => Entity\ShopifyFulfillment::class,
             'singular' => 'fulfillment',
         ],
         'inventory_items' => [
-            'list'     => Entity\ShopifyInventoryItems::class,
-            'one'      => Entity\ShopifyInventoryItem::class,
+            'list' => Entity\ShopifyInventoryItems::class,
+            'one' => Entity\ShopifyInventoryItem::class,
             'singular' => 'inventory_item',
         ],
         'inventory_levels' => [
-            'list'     => Entity\ShopifyInventoryLevels::class,
-            'one'      => Entity\ShopifyInventoryLevel::class,
+            'list' => Entity\ShopifyInventoryLevels::class,
+            'one' => Entity\ShopifyInventoryLevel::class,
             'singular' => 'inventory_level',
         ],
         'metafields' => [
-            'list'     => Entity\ShopifyMetafields::class,
-            'one'      => Entity\ShopifyMetafield::class,
+            'list' => Entity\ShopifyMetafields::class,
+            'one' => Entity\ShopifyMetafield::class,
             'singular' => 'metafield',
         ],
         'orders' => [
-            'list'     => Entity\ShopifyOrders::class,
-            'one'      => Entity\ShopifyOrder::class,
+            'list' => Entity\ShopifyOrders::class,
+            'one' => Entity\ShopifyOrder::class,
             'singular' => 'order',
         ],
         'products' => [
-            'list'     => Entity\ShopifyProducts::class,
-            'one'      => Entity\ShopifyProduct::class,
+            'list' => Entity\ShopifyProducts::class,
+            'one' => Entity\ShopifyProduct::class,
             'singular' => 'product',
         ],
         'variants' => [
-            'list'     => Entity\ShopifyProductVariants::class,
-            'one'      => Entity\ShopifyProductVariant::class,
+            'list' => Entity\ShopifyProductVariants::class,
+            'one' => Entity\ShopifyProductVariant::class,
             'singular' => 'variant',
         ],
     ];
@@ -115,23 +115,6 @@ class ResourceMapping
             throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $realResource);
         }
 
-        $resource = self::resourcesMapping[$realResource];
-
-        if (!isset($resource['singular'])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found singular for this resource: ' . $realResource);
-        }
-
-        return $resource['singular'];
-    }
-
-    public static function isFile(ShopifyRestRequest $shopifyGetRequest): bool
-    {
-        if (!isset(self::resourcesMapping[$shopifyGetRequest->getResource()])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $shopifyGetRequest->getResource());
-        }
-
-        $resource = self::resourcesMapping[$shopifyGetRequest->getResource()];
-
-        return $resource['isFile'] ?? false;
+        return self::resourcesMapping[$realResource]['singular'];
     }
 }

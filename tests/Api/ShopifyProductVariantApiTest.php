@@ -1,8 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
-use Doctrine\Common\Collections\Collection;
 use Scraper\ScraperShopify\Entity\ShopifyProductPresentmentPrice;
 use Scraper\ScraperShopify\Entity\ShopifyProductVariant;
 use Scraper\ScraperShopify\Entity\ShopifyProductVariants;
@@ -17,7 +16,7 @@ class ShopifyProductVariantApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyProductVariant $result */
         $result = $this->executeGetApi(
             'products',
-            632910392,
+            '632910392',
             'variants',
             808950810,
             false,
@@ -27,15 +26,15 @@ class ShopifyProductVariantApiTest extends AbstractShopifyApiTestCase
 
         $this->assertInstanceOf(ShopifyProductVariant::class, $result);
 
-        $this->assertEquals(808950810, $result->getId());
-        $this->assertEquals(632910392, $result->getProductId());
+        $this->assertEquals(808950810, $result->id);
+        $this->assertEquals(632910392, $result->productId);
 
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getCreatedAt());
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getUpdatedAt());
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->createdAt);
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->updatedAt);
 
-        $this->assertInstanceOf(Collection::class, $result->getPresentmentPrices());
-        $this->assertCount(1, $result->getPresentmentPrices());
-        $this->assertInstanceOf(ShopifyProductPresentmentPrice::class, $result->getPresentmentPrices()->first());
+        $this->assertIsArray($result->presentmentPrices);
+        $this->assertCount(1, $result->presentmentPrices);
+        $this->assertInstanceOf(ShopifyProductPresentmentPrice::class, $result->presentmentPrices[0]);
     }
 
     public function testList(): void
@@ -43,7 +42,7 @@ class ShopifyProductVariantApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyProductVariants $result */
         $result = $this->executeGetApi(
             'products',
-            632910392,
+            '632910392',
             'variants',
             null,
             false,
@@ -52,7 +51,7 @@ class ShopifyProductVariantApiTest extends AbstractShopifyApiTestCase
         );
 
         $this->assertInstanceOf(ShopifyProductVariants::class, $result);
-        $this->assertCount(4, $result->getVariants());
-        $this->assertInstanceOf(ShopifyProductVariant::class, $result->getVariants()->first());
+        $this->assertCount(4, $result->variants);
+        $this->assertInstanceOf(ShopifyProductVariant::class, $result->variants[0]);
     }
 }

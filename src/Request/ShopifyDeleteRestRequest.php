@@ -1,12 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Method;
+use Scraper\Scraper\Attribute\Scraper;
 
-/**
- * @Scraper(method="DELETE")
- */
+#[Scraper(method: Method::DELETE)]
 class ShopifyDeleteRestRequest extends ShopifyRestRequest
 {
 }

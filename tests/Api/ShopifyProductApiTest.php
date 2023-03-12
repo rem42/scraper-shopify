@@ -1,8 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
-use Doctrine\Common\Collections\Collection;
 use Scraper\ScraperShopify\Entity\ShopifyImage;
 use Scraper\ScraperShopify\Entity\ShopifyProduct;
 use Scraper\ScraperShopify\Entity\ShopifyProductOption;
@@ -19,7 +18,7 @@ class ShopifyProductApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyProduct $result */
         $result = $this->executeGetApi(
             'products',
-            632910392,
+            '632910392',
             null,
             null,
             false,
@@ -29,25 +28,25 @@ class ShopifyProductApiTest extends AbstractShopifyApiTestCase
 
         $this->assertInstanceOf(ShopifyProduct::class, $result);
 
-        $this->assertEquals(632910392, $result->getId());
+        $this->assertEquals(632910392, $result->id);
 
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getCreatedAt());
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getUpdatedAt());
-        $this->assertInstanceOf(\DateTimeInterface::class, $result->getPublishedAt());
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->createdAt);
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->updatedAt);
+        $this->assertInstanceOf(\DateTimeInterface::class, $result->publishedAt);
 
-        $this->assertInstanceOf(Collection::class, $result->getVariants());
-        $this->assertCount(4, $result->getVariants());
-        $this->assertInstanceOf(ShopifyProductVariant::class, $result->getVariants()->first());
+        $this->assertIsArray($result->variants);
+        $this->assertCount(4, $result->variants);
+        $this->assertInstanceOf(ShopifyProductVariant::class, $result->variants[0]);
 
-        $this->assertInstanceOf(Collection::class, $result->getOptions());
-        $this->assertCount(1, $result->getOptions());
-        $this->assertInstanceOf(ShopifyProductOption::class, $result->getOptions()->first());
+        $this->assertIsArray($result->options);
+        $this->assertCount(1, $result->options);
+        $this->assertInstanceOf(ShopifyProductOption::class, $result->options[0]);
 
-        $this->assertInstanceOf(Collection::class, $result->getImages());
-        $this->assertCount(2, $result->getImages());
-        $this->assertInstanceOf(ShopifyImage::class, $result->getImages()->first());
+        $this->assertIsArray($result->images);
+        $this->assertCount(2, $result->images);
+        $this->assertInstanceOf(ShopifyImage::class, $result->images[0]);
 
-        $this->assertInstanceOf(ShopifyImage::class, $result->getImage());
+        $this->assertInstanceOf(ShopifyImage::class, $result->image);
     }
 
     public function testList(): void
@@ -64,7 +63,7 @@ class ShopifyProductApiTest extends AbstractShopifyApiTestCase
         );
 
         $this->assertInstanceOf(ShopifyProducts::class, $result);
-        $this->assertCount(2, $result->getProducts());
-        $this->assertInstanceOf(ShopifyProduct::class, $result->getProducts()->first());
+        $this->assertCount(2, $result->products);
+        $this->assertInstanceOf(ShopifyProduct::class, $result->products[0]);
     }
 }

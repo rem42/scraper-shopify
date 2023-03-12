@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
@@ -15,7 +15,7 @@ class ShopifyOrderApiTest extends AbstractShopifyApiTestCase
         /** @var ShopifyOrder $result */
         $result = $this->executeGetApi(
             'orders',
-            450789469,
+            '450789469',
             null,
             null,
             false,
@@ -25,7 +25,7 @@ class ShopifyOrderApiTest extends AbstractShopifyApiTestCase
 
         $this->assertInstanceOf(ShopifyOrder::class, $result);
 
-        $this->assertEquals(450789469, $result->getId());
+        $this->assertEquals(450789469, $result->id);
     }
 
     public function testList(): void
@@ -42,7 +42,7 @@ class ShopifyOrderApiTest extends AbstractShopifyApiTestCase
         );
 
         $this->assertInstanceOf(ShopifyOrders::class, $result);
-        $this->assertCount(1, $result->getOrders());
-        $this->assertInstanceOf(ShopifyOrder::class, $result->getOrders()->first());
+        $this->assertCount(1, $result->orders);
+        $this->assertInstanceOf(ShopifyOrder::class, $result->orders[0]);
     }
 }

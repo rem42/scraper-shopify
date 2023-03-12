@@ -1,14 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Scheme;
+use Scraper\Scraper\Attribute\Scraper;
 use Scraper\Scraper\Request\RequestAuthBasic;
 use Scraper\Scraper\Request\ScraperRequest;
 
-/**
- * @Scraper(scheme="HTTPS", host="{host}", path="/admin/api/{version}/{resources}.json")
- */
+#[Scraper(scheme: Scheme::HTTPS, host: '{host}', path: '/admin/api/{version}/{resources}.json')]
 abstract class ShopifyRestRequest extends ScraperRequest implements RequestAuthBasic
 {
     private string $host;
@@ -29,7 +28,7 @@ abstract class ShopifyRestRequest extends ScraperRequest implements RequestAuthB
         string $username,
         string $password
     ) {
-        $this->host     = $host;
+        $this->host = $host;
         $this->username = $username;
         $this->password = $password;
     }
