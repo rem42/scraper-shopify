@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tests\Api;
 
 use PHPUnit\Framework\TestCase;
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Scraper;
 use Scraper\ScraperShopify\Api\ShopifyGetRestApi;
 use Scraper\ScraperShopify\Request\ShopifyGetRestRequest;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -40,9 +40,9 @@ abstract class AbstractShopifyApiTestCase extends TestCase
      */
     protected function executeGetApi(
         string $resource,
-        ?string $id = null,
-        ?string $subResource = null,
-        ?int $subId = null,
+        string $id = null,
+        string $subResource = null,
+        int $subId = null,
         bool $count = false,
         int $statusCode,
         string $fixture

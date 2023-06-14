@@ -1,13 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Request;
 
-use Scraper\Scraper\Annotation\Scraper;
+use Scraper\Scraper\Attribute\Method;
+use Scraper\Scraper\Attribute\Scraper;
 use Scraper\Scraper\Request\RequestQuery;
 
-/**
- * @Scraper(method="GET")
- */
+#[Scraper(method: Method::GET)]
 class ShopifyGetRestRequest extends ShopifyRestRequest implements RequestQuery
 {
     /** @var array<string> */

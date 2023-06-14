@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Tools;
 
@@ -15,58 +15,78 @@ class ResourceMapping
             'singular' => 'report',
         ],
         'addresses' => [
-            'list'     => Entity\ShopifyCustomerAddresses::class,
-            'one'      => Entity\ShopifyCustomerAddress::class,
+            'list' => Entity\Addresses::class,
+            'one' => Entity\Address::class,
             'singular' => 'address',
         ],
         'carrier_services' => [
-            'list'     => Entity\ShopifyCarrierServices::class,
-            'one'      => Entity\ShopifyCarrierService::class,
+            'list' => Entity\CarrierServices::class,
+            'one' => Entity\CarrierService::class,
             'singular' => 'carrier_service',
         ],
         'countries' => [
-            'list'     => Entity\ShopifyCountries::class,
-            'one'      => Entity\ShopifyCountry::class,
+            'list' => Entity\Countries::class,
+            'one' => Entity\Country::class,
             'singular' => 'country',
         ],
         'customers' => [
-            'list'     => Entity\ShopifyCustomers::class,
-            'one'      => Entity\ShopifyCustomer::class,
+            'list' => Entity\Customers::class,
+            'one' => Entity\Customer::class,
             'singular' => 'customer',
         ],
         'fulfillments' => [
-            'list'     => Entity\ShopifyFulfillments::class,
-            'one'      => Entity\ShopifyFulfillment::class,
+            'list' => Entity\Fulfillments::class,
+            'one' => Entity\Fulfillment::class,
             'singular' => 'fulfillment',
         ],
+        'fulfillment_orders' => [
+            'list' => Entity\FulfillmentOrders::class,
+            'one' => Entity\FulfillmentOrder::class,
+            'singular' => 'fulfillment_order',
+        ],
+        'fulfillment_request' => [
+            'list' => Entity\FulfillmentRequest::class,
+            'one' => Entity\FulfillmentRequest::class,
+            'singular' => 'fulfillment_request',
+        ],
+        'fulfillment_request_accept' => [
+            'list' => Entity\FulfillmentOrder::class,
+            'one' => Entity\FulfillmentOrder::class,
+            'singular' => 'fulfillment_request',
+        ],
+        'assigned_fulfillment_orders' => [
+            'list' => Entity\FulfillmentOrders::class,
+            'one' => Entity\FulfillmentOrder::class,
+            'singular' => 'fulfillment_order',
+        ],
         'inventory_items' => [
-            'list'     => Entity\ShopifyInventoryItems::class,
-            'one'      => Entity\ShopifyInventoryItem::class,
+            'list' => Entity\InventoryItems::class,
+            'one' => Entity\InventoryItem::class,
             'singular' => 'inventory_item',
         ],
         'inventory_levels' => [
-            'list'     => Entity\ShopifyInventoryLevels::class,
-            'one'      => Entity\ShopifyInventoryLevel::class,
+            'list' => Entity\InventoryLevels::class,
+            'one' => Entity\InventoryLevel::class,
             'singular' => 'inventory_level',
         ],
         'metafields' => [
-            'list'     => Entity\ShopifyMetafields::class,
-            'one'      => Entity\ShopifyMetafield::class,
+            'list' => Entity\Metafields::class,
+            'one' => Entity\Metafield::class,
             'singular' => 'metafield',
         ],
         'orders' => [
-            'list'     => Entity\ShopifyOrders::class,
-            'one'      => Entity\ShopifyOrder::class,
+            'list' => Entity\Orders::class,
+            'one' => Entity\Order::class,
             'singular' => 'order',
         ],
         'products' => [
-            'list'     => Entity\ShopifyProducts::class,
-            'one'      => Entity\ShopifyProduct::class,
+            'list' => Entity\Products::class,
+            'one' => Entity\Product::class,
             'singular' => 'product',
         ],
         'variants' => [
-            'list'     => Entity\ShopifyProductVariants::class,
-            'one'      => Entity\ShopifyProductVariant::class,
+            'list' => Entity\Variants::class,
+            'one' => Entity\Variant::class,
             'singular' => 'variant',
         ],
     ];
@@ -74,6 +94,7 @@ class ResourceMapping
     public static function find(ShopifyRestRequest $shopifyRestRequest): string
     {
         $realResource = $shopifyRestRequest->getSubResource() ?? $shopifyRestRequest->getResource();
+        $realResource = str_replace('/', '_', $realResource);
 
         if (!isset(self::resourcesMapping[$realResource])) {
             throw new ShopifyResouceMappingNotFoundException('cannot found this resource: ' . $realResource);
@@ -115,23 +136,6 @@ class ResourceMapping
             throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $realResource);
         }
 
-        $resource = self::resourcesMapping[$realResource];
-
-        if (!isset($resource['singular'])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found singular for this resource: ' . $realResource);
-        }
-
-        return $resource['singular'];
-    }
-
-    public static function isFile(ShopifyRestRequest $shopifyGetRequest): bool
-    {
-        if (!isset(self::resourcesMapping[$shopifyGetRequest->getResource()])) {
-            throw new ShopifyResouceMappingNotFoundException('cannot found this resource:' . $shopifyGetRequest->getResource());
-        }
-
-        $resource = self::resourcesMapping[$shopifyGetRequest->getResource()];
-
-        return $resource['isFile'] ?? false;
+        return self::resourcesMapping[$realResource]['singular'];
     }
 }

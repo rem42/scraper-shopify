@@ -1,10 +1,10 @@
 {
   "customer": {
     "id": 207119551,
-    "email": "bob.norman@hostmail.com",
+    "email": "bob.norman@mail.example.com",
     "accepts_marketing": false,
-    "created_at": "2021-02-12T13:48:45-05:00",
-    "updated_at": "2021-02-12T13:48:45-05:00",
+    "created_at": "2023-02-02T09:42:27-05:00",
+    "updated_at": "2023-02-02T09:42:27-05:00",
     "first_name": "Bob",
     "last_name": "Norman",
     "orders_count": 1,
@@ -15,10 +15,10 @@
     "verified_email": true,
     "multipass_identifier": null,
     "tax_exempt": false,
-    "phone": "+16136120707",
-    "tags": "",
+    "tags": "Léon, Noël",
     "last_order_name": "#1001",
     "currency": "USD",
+    "phone": "+16136120707",
     "addresses": [
       {
         "id": 207119551,
@@ -43,6 +43,17 @@
     "accepts_marketing_updated_at": "2005-06-12T11:57:11-04:00",
     "marketing_opt_in_level": null,
     "tax_exemptions": [],
+    "email_marketing_consent": {
+      "state": "not_subscribed",
+      "opt_in_level": null,
+      "consent_updated_at": "2004-06-13T11:57:11-04:00"
+    },
+    "sms_marketing_consent": {
+      "state": "not_subscribed",
+      "opt_in_level": "single_opt_in",
+      "consent_updated_at": "2023-02-02T09:42:27-05:00",
+      "consent_collected_from": "OTHER"
+    },
     "admin_graphql_api_id": "gid://shopify/Customer/207119551",
     "default_address": {
       "id": 207119551,

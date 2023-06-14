@@ -1,20 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class ShopifyPut
 {
-    private ?ShopifyOrder $order = null;
+    public ?Order $order = null;
 
-    public function getOrder(): ?ShopifyOrder
-    {
-        return $this->order;
-    }
-
-    public function setOrder(?ShopifyOrder $order): self
+    public function setOrder(?Order $order): self
     {
         $this->order = $order;
-
         return $this;
     }
 }
