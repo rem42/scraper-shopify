@@ -3,8 +3,8 @@
 namespace Scraper\ScraperShopify\Request;
 
 use Scraper\Scraper\Attribute\Method;
-use Scraper\Scraper\Request\RequestBody;
 use Scraper\Scraper\Attribute\Scraper;
+use Scraper\Scraper\Request\RequestBody;
 use Scraper\Scraper\Request\RequestHeaders;
 use Scraper\ScraperShopify\Factory\SerializerFactory;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;

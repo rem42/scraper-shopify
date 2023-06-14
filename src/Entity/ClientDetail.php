@@ -1,13 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class ClientDetail
 {
-    public $acceptLanguage = null;
-    public $browserHeight = null;
+    public ?string $acceptLanguage = null;
+    public ?int $browserHeight = null;
     public ?string $browserIp = null;
-    public $browserWidth = null;
-    public $sessionHash = null;
-    public $userAgent = null;
+    public ?int $browserWidth = null;
+    public ?string $sessionHash = null;
+    public ?string $userAgent = null;
 }

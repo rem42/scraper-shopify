@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
@@ -6,6 +6,10 @@ class LineItem
 {
     public ?int $id = null;
     public ?string $adminGraphqlApiId = null;
+    public ?int $shopId = null;
+    public ?int $fulfillmentOrderId = null;
+    public ?int $lineItemId = null;
+    public ?int $inventoryItemId = null;
     public ?int $variantId = null;
     public ?string $title = null;
     public ?int $quantity = null;
@@ -28,21 +32,22 @@ class LineItem
     public ?int $fulfillableQuantity = null;
     public ?string $totalDiscount = null;
     public ?TotalDiscountSet $totalDiscountSet = null;
-    public $fulfillmentStatus = null;
+    public ?string $fulfillmentStatus = null;
     public ?int $fulfillmentLineItemId = null;
+    /** @var array<int, TaxLine> */
     public array $taxLines = [];
     /** @var array<int, Duty> */
     public array $duties = [];
     /** @var array<int, DiscountAllocation> */
     public array $discountAllocations = [];
 
-    public function addProperty($property): self
+    public function addProperty(Property $property): self
     {
         $this->properties[] = $property;
         return $this;
     }
 
-    public function addTaxLine($taxLine): self
+    public function addTaxLine(TaxLine $taxLine): self
     {
         $this->taxLines[] = $taxLine;
         return $this;

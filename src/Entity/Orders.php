@@ -1,10 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Scraper\ScraperShopify\Entity;
 
 class Orders
 {
-    use ShopifyPaginated;
+    use CallLimit;
+    use Paginated;
     /** @var array<int, Order> */
     public array $orders = [];
 
