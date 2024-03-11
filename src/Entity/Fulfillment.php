@@ -14,8 +14,7 @@ class Fulfillment
     public ?string $name = null;
     public ?bool $notifyCustomer = null;
     public ?int $orderId = null;
-    /** @var array<int, OriginAddress> */
-    public array $originAddress = [];
+    public ?OriginAddress $originAddress = null;
     public ?Receipt $receipt = null;
     public ?string $service = null;
     public ?string $shipmentStatus = null;
@@ -33,12 +32,6 @@ class Fulfillment
     public function addLineItem(LineItem $lineItem): self
     {
         $this->lineItems[] = $lineItem;
-        return $this;
-    }
-
-    public function addOriginAddress(OriginAddress $originAddress): self
-    {
-        $this->originAddress[] = $originAddress;
         return $this;
     }
 
