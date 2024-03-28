@@ -932,7 +932,6 @@
           "id": 369256396,
           "carrier_identifier": null,
           "code": "Free Shipping",
-          "delivery_category": null,
           "discounted_price": "0.00",
           "discounted_price_set": {
             "shop_money": {

@@ -16,7 +16,7 @@ abstract class AbstractShopifyApiTestCase extends TestCase
     {
         parent::setUp();
 
-        static::$fixturesDir = \dirname(__DIR__) . '/fixtures/';
+        static::$fixturesDir = __DIR__ . '/../fixtures/';
     }
 
     protected function fixturePath(string $filename): string
@@ -40,9 +40,9 @@ abstract class AbstractShopifyApiTestCase extends TestCase
      */
     protected function executeGetApi(
         string $resource,
-        string $id = null,
-        string $subResource = null,
-        int $subId = null,
+        ?string $id = null,
+        ?string $subResource = null,
+        ?int $subId = null,
         bool $count = false,
         int $statusCode,
         string $fixture
