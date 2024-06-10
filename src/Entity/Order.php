@@ -69,7 +69,7 @@ class Order
     public ?string $sourceName = null;
     public ?string $sourceIdentifier = null;
     public ?string $sourceUrl = null;
-    public ?int $subtotalPrice = null;
+    public ?string $subtotalPrice = null;
     public ?SubtotalPriceSet $subtotalPriceSet = null;
     public ?string $tags = null;
     /** @var array<int, TaxLine> */
